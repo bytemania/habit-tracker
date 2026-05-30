@@ -130,15 +130,41 @@ See `renderHabits()` line 117 for the logic.
 
 ## Git Workflow
 
-Every change is automatically committed and pushed:
-- Commit messages describe what changed and why (not just "update")
-- Inspect with `git log --oneline` or view on GitHub
+**All changes are committed and pushed automatically after each meaningful change.**
 
-To rollback to a previous version:
+### Commit Standards
+Every commit should:
+- Use a clear, descriptive message following conventional commits:
+  - `feat:` — new feature or enhancement
+  - `fix:` — bug fix
+  - `docs:` — documentation (README, CLAUDE.md, comments)
+  - `refactor:` — code improvements without changing behavior
+- Include what changed and why (not just "update" or "fix")
+- Example: `feat: Add habit categories - allows users to organize habits by type`
+
+### Process
+1. Make code changes
+2. Verify they work
+3. Run: `git add <files>`
+4. Run: `git commit -m "type: Description"`
+5. Run: `git push origin main`
+
+**All commits go directly to main** — no PR review needed for solo development.
+
+### Rollback Strategy
+If something goes wrong, rollback safely:
 ```bash
-git revert <commit-hash>  # Safe: creates new commit undoing changes
+git revert <commit-hash>  # Creates new commit undoing changes (preferred)
 git checkout <commit-hash> -- app.js  # Restore specific file to past state
+git log --oneline  # View commit history on GitHub or locally
 ```
+
+### CLAUDE.md Updates
+As the codebase evolves (new architecture, patterns, dependencies), **update CLAUDE.md** to reflect those changes:
+- Document new functions and their purpose
+- Update architecture diagrams if structure changes
+- Add development tips for new patterns
+- Keep it current so future instances can be productive immediately
 
 ## No External Dependencies
 
