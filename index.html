@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Habit Tracker</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>📊 Habit Tracker</h1>
+      <p class="date" id="today"></p>
+    </header>
+
+    <section class="add-habit">
+      <h2>➕ Add a New Habit</h2>
+      <form id="habitForm">
+        <input
+          type="text"
+          id="habitInput"
+          placeholder="e.g., Exercise, Read, Meditate..."
+          required
+        />
+        <button type="submit">Add Habit</button>
+      </form>
+    </section>
+
+    <section class="dashboard-summary">
+      <h2>📈 Dashboard</h2>
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-value" id="totalHabits">0</div>
+          <div class="stat-label">Total Habits</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value" id="completedToday">0</div>
+          <div class="stat-label">Completed Today</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value" id="avgStreak">0</div>
+          <div class="stat-label">Avg Streak</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="dashboard">
+      <h2>💪 Your Habits</h2>
+      <div id="habitsList" class="habits-list">
+        <p class="empty-state">No habits yet. Add one to get started!</p>
+      </div>
+    </section>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
